@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Supplementary results for Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs.">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#111821">
+    <title>Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs — Supplementary Results</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="assets/scene-sync.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#top" aria-label="Supplementary results, back to top">
+          <span class="mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          Supplementary results
+        </a>
+      </div>
+    </header>
+
+    <nav class="section-nav" aria-label="Page sections">
+      <p class="section-nav-label">On this page</p>
+      <ul class="section-nav-list">
+        <li><a href="#scene-aware-mesh-animation">Scene-aware mesh animation</a></li>
+        <li><a href="#keyframe-controlled-motion">Keyframe-Controlled Motion</a></li>
+        <li><a href="#video-to-motion">Video-to-Motion</a></li>
+        <li><a href="#motion-to-video">Motion-to-Video</a></li>
+
+        <li><a href="#training-datasets">Training Datasets</a></li>
+        <li class="nav-subsection"><a href="#dataset-oiv">OiV</a></li>
+        <li class="nav-subsection"><a href="#dataset-openvid">OpenVid</a></li>
+        <li class="nav-subsection"><a href="#dataset-haa500">HAA500</a></li>
+        <li class="nav-subsection"><a href="#human-pretraining">Human Data Pretraining</a></li>
+        <li class="nav-subsection"><a href="#robot-datasets">Robotics Data</a></li>
+        <li><a href="#comparison">Mesh Animation Comparison</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <section class="hero page-width" id="top" aria-labelledby="paper-title">
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> ICLR 2027 <span class="eyebrow-divider" aria-hidden="true">/</span> Supplementary material</div>
+        <h1 id="paper-title"><span class="paper-name">Joints, Camera, Action!</span> <span class="paper-subtitle">Co-Generating 3D Motion and Video for Arbitrary Rigs</span></h1>
+      </section>
+
+      <div class="section-wrap page-width" id="results">
+        <section class="content-section result-section" id="scene-aware-mesh-animation" aria-labelledby="scene-aware-mesh-animation-title">
+          <h2 class="section-title" id="scene-aware-mesh-animation-title">Scene-aware mesh animation</h2>
+          <p class="section-intro">Given a rigged asset, a 3D scene, an initial position, and a text prompt, our model jointly generates video and 3D motion consistent with the surrounding environment. These examples correspond to Section 4.2 of the paper.</p>
+          <div class="scene-grid">
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-ape-labels-2x-poster.jpg" aria-label="Ape: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-ape-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-ape-labels-2x.mp4">Open the ape showcase.</a>
+              </video>
+
+            </figure>
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-penguin-labels-2x-poster.jpg" aria-label="Penguin: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-penguin-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-penguin-labels-2x.mp4">Open the penguin showcase.</a>
+              </video>
+
+            </figure>
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-bear-labels-2x-poster.jpg" aria-label="Bear: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-bear-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-bear-labels-2x.mp4">Open the bear showcase.</a>
+              </video>
+
+            </figure>
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-astronaut-labels-2x-poster.jpg" aria-label="Astronaut: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-astronaut-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-astronaut-labels-2x.mp4">Open the astronaut showcase.</a>
+              </video>
+
+            </figure>
+          </div>
+          <div class="scene-grid scene-grid-centered" aria-label="More scene-aware mesh animation examples">
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-troll-labels-2x-poster.jpg" aria-label="Troll: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-troll-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-troll-labels-2x.mp4">Open the Troll showcase.</a>
+              </video>
+
+            </figure>
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-g1-labels-2x-poster.jpg" aria-label="G1: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-g1-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-g1-labels-2x.mp4">Open the G1 showcase.</a>
+              </video>
+
+            </figure>
+            <figure class="scene-sample">
+              <video controls loop muted playsinline preload="auto" width="1920" height="1080" poster="assets/scene-aware-panda-labels-2x-poster.jpg" aria-label="Panda: scene-aware mesh animation showcase">
+                <source src="assets/scene-aware-panda-labels-2x.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/scene-aware-panda-labels-2x.mp4">Open the Panda showcase.</a>
+              </video>
+
+            </figure>
+          </div>
+        </section>
+
+        <section class="content-section result-section" id="keyframe-controlled-motion" aria-labelledby="keyframe-controlled-motion-title">
+          <h2 class="section-title" id="keyframe-controlled-motion-title">Keyframe-Controlled Motion</h2>
+          <p class="section-intro">As described in Section 4.4, given a text prompt, a static rig, and RGB keyframes, our model jointly generates video and 3D motion guided by the keyframes.</p>
+          <div class="keyframe-grid">
+            <figure class="keyframe-sample">
+              <div class="keyframe-reference-labels" aria-hidden="true"><span>First frame</span><span>Last frame</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1440" height="888" poster="assets/keyframe-controlled-mouse-two-keyframes-poster.jpg" aria-label="Mouse · two keyframes: conditioning keyframes above the generated video and rendered 3D motion">
+                <source src="assets/keyframe-controlled-mouse-two-keyframes.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/keyframe-controlled-mouse-two-keyframes.mp4">Open the Mouse · two keyframes result.</a>
+              </video>
+            </figure>
+            <figure class="keyframe-sample">
+              <div class="keyframe-reference-labels" aria-hidden="true"><span>First frame</span><span>Middle frame</span><span>Last frame</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1440" height="888" poster="assets/keyframe-controlled-mouse-three-keyframes-poster.jpg" aria-label="Mouse · three keyframes: conditioning keyframes above the generated video and rendered 3D motion">
+                <source src="assets/keyframe-controlled-mouse-three-keyframes.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/keyframe-controlled-mouse-three-keyframes.mp4">Open the Mouse · three keyframes result.</a>
+              </video>
+            </figure>
+            <figure class="keyframe-sample">
+              <div class="keyframe-reference-labels" aria-hidden="true"><span>First frame</span><span>Middle frame</span><span>Last frame</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1440" height="888" poster="assets/keyframe-controlled-emerald-treasure-poster.jpg" aria-label="Emerald treasure chest: conditioning keyframes above the generated video and rendered 3D motion">
+                <source src="assets/keyframe-controlled-emerald-treasure.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/keyframe-controlled-emerald-treasure.mp4">Open the Emerald treasure chest result.</a>
+              </video>
+            </figure>
+            <figure class="keyframe-sample">
+              <div class="keyframe-reference-labels" aria-hidden="true"><span>First frame</span><span>Last frame</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1440" height="888" poster="assets/keyframe-controlled-human-chair-poster.jpg" aria-label="Human chair: conditioning keyframes above the generated video and rendered 3D motion">
+                <source src="assets/keyframe-controlled-human-chair.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/keyframe-controlled-human-chair.mp4">Open the Human chair result.</a>
+              </video>
+            </figure>
+            <figure class="keyframe-sample">
+              <div class="keyframe-reference-labels" aria-hidden="true"><span>First frame</span><span>Middle frame</span><span>Last frame</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1440" height="888" poster="assets/keyframe-controlled-cargo-robot-poster.jpg" aria-label="Cargo robot: conditioning keyframes above the generated video and rendered 3D motion">
+                <source src="assets/keyframe-controlled-cargo-robot.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/keyframe-controlled-cargo-robot.mp4">Open the Cargo robot result.</a>
+              </video>
+            </figure>
+            <figure class="keyframe-sample">
+              <div class="keyframe-reference-labels" aria-hidden="true"><span>First frame</span><span>Middle frame</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1440" height="888" poster="assets/keyframe-controlled-giant-chess-poster.jpg" aria-label="The giant chess move: conditioning keyframes above the generated video and rendered 3D motion">
+                <source src="assets/keyframe-controlled-giant-chess.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/keyframe-controlled-giant-chess.mp4">Open the The giant chess move result.</a>
+              </video>
+            </figure>
+          </div>
+        </section>
+
+        <section class="content-section result-section" id="video-to-motion" aria-labelledby="video-to-motion-title">
+          <h2 class="section-title" id="video-to-motion-title">Video-to-Motion</h2>
+          <p class="section-intro">As described in Section 4.4, our model estimates 3D motion for a supplied rig by keeping the input video clean and denoising only the motion, without requiring the first-frame pose.</p>
+          <div class="video-motion-grid">
+            <figure class="video-motion-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input video</span><span>3D motion</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/video-to-motion-eagle-ft-poster.jpg" aria-label="Eagle · Eagle-FlyLoop/y60: input video on the left, predicted 3D motion on the right, synchronized frame by frame">
+                <source src="assets/video-to-motion-eagle-ft.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/video-to-motion-eagle-ft.mp4">Open the Eagle · Eagle-FlyLoop/y60 pair.</a>
+              </video>
+
+            </figure>
+            <figure class="video-motion-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input video</span><span>3D motion</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/video-to-motion-polarbear-ft-poster.jpg" aria-label="PolarBear · PolarBear-Run/y45: input video on the left, predicted 3D motion on the right, synchronized frame by frame">
+                <source src="assets/video-to-motion-polarbear-ft.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/video-to-motion-polarbear-ft.mp4">Open the PolarBear · PolarBear-Run/y45 pair.</a>
+              </video>
+
+            </figure>
+            <figure class="video-motion-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input video</span><span>3D motion</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/video-to-motion-tyranno-ft-poster.jpg" aria-label="Tyranno · Tyranno-Roar/y60: input video on the left, predicted 3D motion on the right, synchronized frame by frame">
+                <source src="assets/video-to-motion-tyranno-ft.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/video-to-motion-tyranno-ft.mp4">Open the Tyranno · Tyranno-Roar/y60 pair.</a>
+              </video>
+
+            </figure>
+            <figure class="video-motion-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input video</span><span>3D motion</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/video-to-motion-crocodile-ft-poster.jpg" aria-label="Crocodile · Crocodile-Bite/y30: input video on the left, predicted 3D motion on the right, synchronized frame by frame">
+                <source src="assets/video-to-motion-crocodile-ft.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/video-to-motion-crocodile-ft.mp4">Open the Crocodile · Crocodile-Bite/y30 pair.</a>
+              </video>
+
+            </figure>
+          </div>
+        </section>
+
+        <section class="content-section result-section" id="motion-to-video" aria-labelledby="motion-to-video-title">
+          <h2 class="section-title" id="motion-to-video-title">Motion-to-Video</h2>
+          <p class="section-intro">As described in Section 4.4, our model generates video from input 3D motion and a text prompt, with or without an initial image.</p>
+          <h3 class="motion-video-subtitle">With image</h3>
+          <div class="video-motion-grid" aria-label="With image">
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-oiw-015-poster.jpg" aria-label="OiW #015: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-oiw-015.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-oiw-015.mp4">Open the OiW #015 pair.</a>
+              </video>
+            </figure>
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-oiw-103-poster.jpg" aria-label="OiW #103: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-oiw-103.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-oiw-103.mp4">Open the OiW #103 pair.</a>
+              </video>
+            </figure>
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-oiw-024-poster.jpg" aria-label="OiW #024: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-oiw-024.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-oiw-024.mp4">Open the OiW #024 pair.</a>
+              </video>
+            </figure>
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-dragon-039-poster.jpg" aria-label="Dragon #039: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-dragon-039.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-dragon-039.mp4">Open the Dragon #039 pair.</a>
+              </video>
+            </figure>
+          </div>
+          <h3 class="motion-video-subtitle">Without image</h3>
+          <div class="video-motion-grid" aria-label="Without image">
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-red-panda-poster.jpg" aria-label="Red panda morning warm-up: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-red-panda.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-red-panda.mp4">Open the Red panda morning warm-up pair.</a>
+              </video>
+            </figure>
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-brass-robot-poster.jpg" aria-label="Brass robot skipping: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-brass-robot.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-brass-robot.mp4">Open the Brass robot skipping pair.</a>
+              </video>
+            </figure>
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-frog-fly-fishing-poster.jpg" aria-label="Frog fly-fishing demonstration: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-frog-fly-fishing.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-frog-fly-fishing.mp4">Open the Frog fly-fishing demonstration pair.</a>
+              </video>
+            </figure>
+            <figure class="video-motion-sample motion-video-sample">
+              <div class="pair-labels" aria-hidden="true"><span>Input 3D motion</span><span>Generated video</span></div>
+              <video autoplay controls loop muted playsinline preload="metadata" width="1180" height="400" poster="assets/motion-to-video-owl-motorcycle-poster.jpg" aria-label="Owl motorcycle rider: input 3D motion on the left, generated video on the right, synchronized frame by frame">
+                <source src="assets/motion-to-video-owl-motorcycle.mp4" type="video/mp4">
+                Your browser does not support embedded video. <a href="assets/motion-to-video-owl-motorcycle.mp4">Open the Owl motorcycle rider pair.</a>
+              </video>
+            </figure>
+          </div>
+        </section>
+
+
+        <section class="content-section datasets-section" id="training-datasets" aria-labelledby="datasets-title">
+          <h2 class="section-title" id="datasets-title">Training Datasets</h2>
+          <p class="section-intro">We train on this heterogeneous mixture to expose the model to diverse scenes, appearances, motions, and skeletal topologies.</p>
+          <section class="dataset" id="dataset-oiv" aria-labelledby="oiv-title">
+            <div class="dataset-heading">
+              <h3 id="oiv-title">OiV- Objaverse in Video</h3>
+              <p class="dataset-description">We construct OiV, a dataset of 110,109 video–motion pairs, by rendering animated Objaverse assets and using a generative video editor to place them in VLM-selected environments while retaining their known 3D motion as ground truth.</p>
+            </div>
+            <div class="dataset-grid">
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-flying-bird-poster.jpg" aria-label="Flying bird: paired video and 3D motion">
+                  <source src="assets/oiv-flying-bird.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-flying-bird.mp4">Open the flying bird pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A bird soaring through a bright blue sky with scattered clouds, flapping its wings rhythmically.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-dancing-robot-poster.jpg" aria-label="Dancing robot: paired video and 3D motion">
+                  <source src="assets/oiv-dancing-robot.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-dancing-robot.mp4">Open the dancing robot pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A grey and white humanoid robot with red accents performs a rhythmic arm dance in a futuristic laboratory with metallic walls and glowing blue panels.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-grazing-deer-poster.jpg" aria-label="Grazing deer: paired video and 3D motion">
+                  <source src="assets/oiv-grazing-deer.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-grazing-deer.mp4">Open the grazing deer pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A stylized, low-poly deer with prominent antlers stands in a sunlit forest and lowers its head to graze.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-pink-bunny-poster.jpg" aria-label="Pink bunny: paired video and 3D motion">
+                  <source src="assets/oiv-pink-bunny.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-pink-bunny.mp4">Open the pink bunny pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A cute, stylized pink bunny rabbit hops playfully through a sunlit meadow filled with tall grass and wildflowers.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-octopus-poster.jpg" aria-label="Octopus: paired video and 3D motion">
+                  <source src="assets/oiv-octopus.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-octopus.mp4">Open the octopus pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A purple octopus on a sandy ocean floor extends its tentacles outward and lowers its body to rest on the ground.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-elephant-poster.jpg" aria-label="Elephant: paired video and 3D motion">
+                  <source src="assets/oiv-elephant.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-elephant.mp4">Open the elephant pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A small grey elephant with tusks stands on its hind legs and then walks forward across a grassy savanna.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-superhero-poster.jpg" aria-label="Superhero gesture: paired video and 3D motion">
+                  <source src="assets/oiv-superhero.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-superhero.mp4">Open the superhero gesture pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A superhero character in a blue and red suit with a large white spider emblem on the chest stands on a sunlit urban rooftop. The character raises both hands to shoulder height with palms facing outward in a gesture before lowering them back to their sides.</p>
+                </figcaption>
+              </figure>
+              <figure class="dataset-sample">
+                <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/oiv-sea-turtle-poster.jpg" aria-label="Sea turtle: paired video and 3D motion">
+                  <source src="assets/oiv-sea-turtle.mp4" type="video/mp4">
+                  Your browser does not support embedded video. <a href="assets/oiv-sea-turtle.mp4">Open the sea turtle pair.</a>
+                </video>
+                <figcaption>
+                  <p class="sample-prompt">A dark sea turtle swims gracefully through clear blue ocean water, flapping its flippers to propel itself forward.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+          <div class="dataset-row" id="human-datasets">
+            <section class="dataset" id="dataset-openvid" aria-labelledby="openvid-title">
+              <div class="dataset-heading">
+                <h3 id="openvid-title">OpenVid</h3>
+                <p class="dataset-description human-data-description">Human motion data is collected by combining SAM-Body-4D for body motion and Dyn-HAMR for hand motion.</p>
+                <p class="dataset-description">OpenVid contains 57,095 video–motion pairs.</p>
+              </div>
+              <div class="dataset-grid dataset-grid-pair">
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/openvid-cooking-poster.jpg" aria-label="Cooking: paired video and 3D motion">
+                    <source src="assets/openvid-cooking.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/openvid-cooking.mp4">Open the cooking pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">In the video, a woman is seen in a kitchen, preparing a meal. She is wearing a black tank top and has blonde hair. The kitchen is well-equipped with wooden cabinets and various appliances such as a microwave and a blender. The woman is using a blender to mix ingredients, and she is also seen using a knife to chop vegetables. The overall style of the video is casual and homey, capturing the everyday life of a person preparing a meal in their kitchen.</p>
+                  </figcaption>
+                </figure>
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/openvid-yoga-poster.jpg" aria-label="Outdoor yoga: paired video and 3D motion">
+                    <source src="assets/openvid-yoga.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/openvid-yoga.mp4">Open the outdoor yoga pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">The video shows a woman performing a yoga pose on a blue mat. She is wearing a purple tank top and black shorts. The setting is outdoors, with a pool and a view of the ocean in the background. The woman starts in a standing position, then bends forward, placing her hands on the mat. She then extends one leg behind her, lifting it off the ground. The video captures the woman&#x27;s movement and the serene environment around her.</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+            <section class="dataset" id="dataset-haa500" aria-labelledby="haa500-title">
+              <div class="dataset-heading">
+                <h3 id="haa500-title">HAA500</h3>
+                <p class="dataset-description human-data-description">Human motion data is collected by combining SAM-Body-4D for body motion and Dyn-HAMR for hand motion.</p>
+                <p class="dataset-description">HAA500 contains 3,449 video–motion pairs.</p>
+              </div>
+              <div class="dataset-grid dataset-grid-pair">
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/haa500-basketball-poster.jpg" aria-label="Basketball: paired video and 3D motion">
+                    <source src="assets/haa500-basketball.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/haa500-basketball.mp4">Open the basketball pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">The person is performing a basketball dribbling sequence. They make a forward stride while bouncing the ball alongside their body, maneuvering it skillfully with hand-eye coordination. Their stance is low for balance and agility, ready for directional changes or to evade opponents.</p>
+                  </figcaption>
+                </figure>
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/haa500-breakdance-poster.jpg" aria-label="Breakdance: paired video and 3D motion">
+                    <source src="assets/haa500-breakdance.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/haa500-breakdance.mp4">Open the breakdance pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">A person is performing a breakdancing move called the flare.</p>
+                  </figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+          <section class="pretraining-section" id="human-pretraining" aria-labelledby="pretraining-title">
+            <h3 class="pretraining-title" id="pretraining-title">Human Data Pretraining</h3>
+            <div class="dataset-row" id="pretraining-datasets">
+              <section class="dataset" id="dataset-humanml3d" aria-labelledby="humanml3d-title">
+                <div class="dataset-heading">
+                  <h4 id="humanml3d-title">HumanML3D</h4>
+                  <p class="dataset-description">We use the official HumanML3D dataset of human motions and text descriptions for pretraining.</p>
+                </div>
+                <div class="dataset-grid dataset-grid-pair">
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/humanml3d-soccer-kick-poster.jpg" aria-label="Soccer kick: 3D motion">
+                      <source src="assets/humanml3d-soccer-kick.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/humanml3d-soccer-kick.mp4">Open the soccer kick motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">person kicks with right leg as if kicking a soccer ball.</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/humanml3d-cartwheel-poster.jpg" aria-label="Cartwheel: 3D motion">
+                      <source src="assets/humanml3d-cartwheel.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/humanml3d-cartwheel.mp4">Open the cartwheel motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">a person who is standing with his hands out from his sides, lifts his hands, bends forward, performs a cartwheel and stops.</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/humanml3d-boxing-poster.jpg" aria-label="Boxing: 3D motion">
+                      <source src="assets/humanml3d-boxing.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/humanml3d-boxing.mp4">Open the boxing motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">a person is boxing, punching first with their right hand, then their left.</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/humanml3d-ballet-poster.jpg" aria-label="Ballet: 3D motion">
+                      <source src="assets/humanml3d-ballet.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/humanml3d-ballet.mp4">Open the ballet motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">a person is doing an elaborate ballet dance with their arms and legs.</p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+              <section class="dataset" id="dataset-seed-bones" aria-labelledby="seed-bones-title">
+                <div class="dataset-heading">
+                  <h4 id="seed-bones-title">BONES-SEED Augmented</h4>
+                  <p class="dataset-description">100,000 motion–text samples from BONES-SEED, with augmented skeletons to increase skeletal diversity.</p>
+                </div>
+                <div class="dataset-grid dataset-grid-pair">
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/seed-bones-crawling-poster.jpg" aria-label="Crawling: 3D motion">
+                      <source src="assets/seed-bones-crawling.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/seed-bones-crawling.mp4">Open the crawling motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">A person on the ground crawls forward slowly.</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/seed-bones-sneaking-walk-poster.jpg" aria-label="Sneaking walk: 3D motion">
+                      <source src="assets/seed-bones-sneaking-walk.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/seed-bones-sneaking-walk.mp4">Open the sneaking walk motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">A person is slowly and sneakily walking toward the right diagonal in a crossover pattern.</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/seed-bones-jump-reach-poster.jpg" aria-label="Jump and reach: 3D motion">
+                      <source src="assets/seed-bones-jump-reach.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/seed-bones-jump-reach.mp4">Open the jump and reach motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">A person jumps with energy in order to reach something and stands in a place.</p>
+                    </figcaption>
+                  </figure>
+                  <figure class="dataset-sample motion-sample">
+                    <div class="motion-label" aria-hidden="true">3D motion</div>
+                    <video autoplay controls loop muted playsinline preload="metadata" width="640" height="400" poster="assets/seed-bones-hip-hop-poster.jpg" aria-label="Hip-hop dance: 3D motion">
+                      <source src="assets/seed-bones-hip-hop.mp4" type="video/mp4">
+                      Your browser does not support embedded video. <a href="assets/seed-bones-hip-hop.mp4">Open the hip-hop dance motion.</a>
+                    </video>
+                    <figcaption>
+                      <p class="sample-prompt">A person performs a hip hop dance by rhythmically moving their arms and kicking their legs.</p>
+                    </figcaption>
+                  </figure>
+                </div>
+              </section>
+            </div>
+          </section>
+          <section class="robotics-section" id="robot-datasets" aria-labelledby="robotics-title">
+            <h3 class="robotics-title" id="robotics-title">Robotics Data</h3>
+            <div class="dataset-row dataset-row-four">
+              <section class="dataset" id="dataset-droid" aria-labelledby="droid-title">
+                <div class="dataset-heading">
+                  <h4 id="droid-title">DROID</h4>
+                  <p class="dataset-description">25,217 video–motion pairs.</p>
+                </div>
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1216" height="360" poster="assets/droid-fold-towel-poster.jpg" aria-label="Fold a towel: paired video and 3D motion">
+                    <source src="assets/droid-fold-towel.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/droid-fold-towel.mp4">Open the fold a towel pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">Fold the towel once on the table</p>
+                  </figcaption>
+                </figure>
+              </section>
+              <section class="dataset" id="dataset-robocerebra" aria-labelledby="robocerebra-title">
+                <div class="dataset-heading">
+                  <h4 id="robocerebra-title">RoboCerebra</h4>
+                  <p class="dataset-description">912 video–motion pairs.</p>
+                </div>
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/robocerebra-chill-plate-poster.jpg" aria-label="Kitchen · condiments: paired video and 3D motion">
+                    <source src="assets/robocerebra-chill-plate.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/robocerebra-chill-plate.mp4">Open the kitchen · condiments pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">Chill a plate by pouring desired amounts of BBQ sauce, salad dressing, and tomato sauce onto it, then placing the plate in the lower region of a short fridge.</p>
+                  </figcaption>
+                </figure>
+              </section>
+              <section class="dataset" id="dataset-tavis" aria-labelledby="tavis-title">
+                <div class="dataset-heading">
+                  <h4 id="tavis-title">TAVIS</h4>
+                  <p class="dataset-description">570 video–motion pairs.</p>
+                </div>
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/tavis-tomato-soup-poster.jpg" aria-label="Shelf · soup: paired video and 3D motion">
+                    <source src="assets/tavis-tomato-soup.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/tavis-tomato-soup.mp4">Open the shelf · soup pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">Find the tomato soup can on the shelf and bring it to me.</p>
+                  </figcaption>
+                </figure>
+              </section>
+              <section class="dataset" id="dataset-aloha" aria-labelledby="aloha-title">
+                <div class="dataset-heading">
+                  <h4 id="aloha-title">ALOHA</h4>
+                  <p class="dataset-description">50 video–motion pairs.</p>
+                </div>
+                <figure class="dataset-sample">
+                  <div class="pair-labels" aria-hidden="true"><span>Video</span><span>3D motion</span></div>
+                  <video autoplay controls loop muted playsinline preload="metadata" width="1340" height="400" poster="assets/aloha-cube-transfer-poster.jpg" aria-label="Episode 00: paired video and 3D motion">
+                    <source src="assets/aloha-cube-transfer.mp4" type="video/mp4">
+                    Your browser does not support embedded video. <a href="assets/aloha-cube-transfer.mp4">Open the episode 00 pair.</a>
+                  </video>
+                  <figcaption>
+                    <p class="sample-prompt">Pick up the cube with the right arm and transfer it to the left arm.</p>
+                  </figcaption>
+                </figure>
+              </section>
+            </div>
+          </section>
+        </section>
+
+        <section class="content-section comparison-section" id="comparison" aria-labelledby="comparison-title">
+          <h2 class="section-title" id="comparison-title">Mesh Animation Comparison</h2>
+          <p class="section-intro">Mesh animation comparison: an animated version of Figure 3 from the main paper, comparing JCA with other leading approaches.</p>
+          <figure class="comparison-figure">
+            <video autoplay controls loop muted playsinline preload="auto" width="1948" height="1090" poster="assets/figure-3-comparison-poster.png" aria-label="Animated comparison of mesh animation methods">
+              <source src="assets/figure-3-comparison.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="assets/figure-3-comparison.mp4">Open the comparison video.</a>
+            </video>
+          </figure>
+        </section>
+
+      </div>
+    </main>
+    <footer class="site-footer page-width"><span>Anonymous submission <span aria-hidden="true">·</span> ICLR 2027</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  </body>
+</html>
