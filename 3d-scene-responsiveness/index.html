@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="3D responsiveness to the scene: additional supplementary results for Joints, Camera, Action!">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'none'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c121a">
+<title>3D Responsiveness to the Scene — Joints, Camera, Action!</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css"></head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="page-nav" aria-label="Project navigation"><a class="back-link" href="../">← Supplementary results</a></nav>
+<main id="main">
+<header><h1>3D RESPONSIVENESS TO THE SCENE</h1><p>We vary the floor target’s location while keeping the character, background, camera, and prompt fixed.<br><span class="measurement">We measure how closely the generated motion reaches the target in the original 3D scene.</span></p><p class="result">The average distance to the target decreases from <strong>0.856 m</strong> at the start to <strong>0.185 m</strong> at the end.</p></header>
+<section class="input-group" aria-labelledby="inputs-title"><h2 class="section-title" id="inputs-title">Inputs</h2><div class="inputs"><div class="intro">
+<div class="input-card scene"><h3 class="input-title">Scene</h3><img class="scene-image" src="intro/scene_empty.png" width="560" height="320" alt="Original 3D environment rendered from the fixed scene camera with the character and target hidden"></div>
+<div class="input-card character"><h3 class="input-title">Character</h3><div class="rest-pair">
+<figure class="rest-item"><figcaption>Mesh</figcaption><img src="intro/mesh_rest.png" width="560" height="400" alt="Original textured character mesh"></figure>
+<figure class="rest-item"><figcaption>Rig</figcaption><img src="intro/rig_rest.png" width="560" height="400" alt="Matching character rig, with blue bones and red joints"></figure>
+</div></div>
+<div class="input-card prompt"><h3 class="input-title">Prompt</h3><blockquote>The character walks directly to the red-and-white bullseye with steady, alternating steps. The character slows on arrival, then stops upright with the bullseye between its feet. The bullseye remains fixed on the floor.</blockquote></div>
+<div class="input-card destination"><h3 class="input-title">End destination</h3><img class="destination-image" src="intro/destination.png" width="420" height="280" alt="Red-and-white bullseye marking the end destination"></div>
+</div></div></section>
+<section class="results" aria-labelledby="results-title"><h2 class="section-title" id="results-title">Results</h2>
+<section class="gallery" aria-label="Five geometric responsiveness examples">
+<figure>
+<figcaption class="sample-title">Example 1</figcaption>
+<video autoplay muted loop playsinline controls controlslist="nodownload" preload="auto" width="1120" height="692" poster="example-1-poster.jpg" aria-label="Example 1: first and last keyframes above generated video and synchronized 3D motion"><source src="example-1.mp4" type="video/mp4">Your browser does not support embedded video. <a href="example-1.mp4">Open Example 1.</a></video>
+</figure>
+<figure>
+<figcaption class="sample-title">Example 2</figcaption>
+<video autoplay muted loop playsinline controls controlslist="nodownload" preload="auto" width="1120" height="692" poster="example-2-poster.jpg" aria-label="Example 2: first and last keyframes above generated video and synchronized 3D motion"><source src="example-2.mp4" type="video/mp4">Your browser does not support embedded video. <a href="example-2.mp4">Open Example 2.</a></video>
+</figure>
+<figure>
+<figcaption class="sample-title">Example 3</figcaption>
+<video autoplay muted loop playsinline controls controlslist="nodownload" preload="auto" width="1120" height="692" poster="example-3-poster.jpg" aria-label="Example 3: first and last keyframes above generated video and synchronized 3D motion"><source src="example-3.mp4" type="video/mp4">Your browser does not support embedded video. <a href="example-3.mp4">Open Example 3.</a></video>
+</figure>
+<figure>
+<figcaption class="sample-title">Example 4</figcaption>
+<video autoplay muted loop playsinline controls controlslist="nodownload" preload="auto" width="1120" height="692" poster="example-4-poster.jpg" aria-label="Example 4: first and last keyframes above generated video and synchronized 3D motion"><source src="example-4.mp4" type="video/mp4">Your browser does not support embedded video. <a href="example-4.mp4">Open Example 4.</a></video>
+</figure>
+<figure>
+<figcaption class="sample-title">Example 5</figcaption>
+<video autoplay muted loop playsinline controls controlslist="nodownload" preload="auto" width="1120" height="692" poster="example-5-poster.jpg" aria-label="Example 5: first and last keyframes above generated video and synchronized 3D motion"><source src="example-5.mp4" type="video/mp4">Your browser does not support embedded video. <a href="example-5.mp4">Open Example 5.</a></video>
+</figure>
+</section></section>
+</main></body></html>
